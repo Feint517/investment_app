@@ -1,0 +1,101 @@
+name: investment_app
+description: "A new Flutter project."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.8.1
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  get: ^4.7.2
+  get_storage: ^2.1.1
+  lottie: ^3.3.1
+  flutter_svg: ^2.2.0
+  gap: ^3.0.1
+  shimmer: ^3.0.0
+  iconsax: ^0.0.8
+  dio: ^5.8.0+1
+  pretty_dio_logger: ^1.4.0
+  connectivity_plus: ^6.1.4
+  device_info_plus: ^11.5.0
+  file_picker: ^10.2.0
+  permission_handler: ^12.0.1
+  freezed_annotation: ^3.1.0
+  json_annotation: ^4.9.0
+  freezed: ^3.1.0
+  logger: ^2.6.0
+  flutter_screenutil: ^5.9.3
+  visibility_detector: ^0.4.0+2
+  smooth_page_indicator: ^1.2.1
+  intl: ^0.20.2
+  vector_math: ^2.1.4
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^5.0.0
+  build_runner: ^2.5.4
+  json_serializable: ^6.9.5
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/test/
+    - assets/images/
+    - assets/images/logos/
+    - assets/images/animations/
+    - assets/images/on_boarding/
+    - assets/svg/
+    - assets/svg/misc/
+    - assets/svg/on_boarding/
+    - assets/icons/
+    - assets/lottie/
+    - assets/lottie/misc/
+
+  fonts:
+    - family: Montserrat
+      fonts:
+        - asset: assets/fonts/Montserrat-Regular.ttf
+        - asset: assets/fonts/Montserrat-Italic.ttf
+          style: italic
+        - asset: assets/fonts/Montserrat-Black.ttf
+          weight: 900
+        - asset: assets/fonts/Montserrat-BlackItalic.ttf
+          weight: 900
+          style: italic
+        - asset: assets/fonts/Montserrat-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Montserrat-BoldItalic.ttf
+          weight: 700
+          style: italic
+        - asset: assets/fonts/Montserrat-ExtraBold.ttf
+          weight: 800
+        - asset: assets/fonts/Montserrat-ExtraBoldItalic.ttf
+          weight: 800
+          style: italic
+        - asset: assets/fonts/Montserrat-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/Montserrat-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/Montserrat-Light.ttf
+          weight: 300
+        - asset: assets/fonts/Montserrat-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/Montserrat-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Montserrat-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/Montserrat-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Montserrat-SemiBoldItalic.ttf
+          weight: 600
+          style: italic

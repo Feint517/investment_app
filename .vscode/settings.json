@@ -1,0 +1,22 @@
+{
+  "cSpell.words": [
+  ],
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/.idea": true,
+    "**/.gitignore": true,
+    "**/analysis_options.yaml": true,
+    "**devtools_options.yaml": true,
+    "**social_media_app.iml": true,
+    "**LePetitDavinci.md": true,
+    "**/.metadata": true,
+    "**pubspec.lock": true,
+    "**README.md": true,
+    "**/test": false,
+    "**/build": true,
+    "**/web": true,
+    "**/windows": false,
+    "**.flutter-plugins": true,
+    "**.flutter-plugins-dependencies": true
+  }
+}
