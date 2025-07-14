@@ -51,9 +51,8 @@ class SvgAssets {
 class AudioAssets {}
 
 class TestAssets {
-  static const String profileBanner = 'assets/test/profile_background.jpeg';
   static const String avatar = 'assets/test/avatar.jpg';
-  static const String postImage = 'assets/test/post_image.jpeg';
-  static const String postImage2 = 'assets/test/post_image2.jpg';
-  static const String postImage3 = 'assets/test/post_image3.jpg';
+  static const String companyLogo1 = 'assets/test/company_logo1.png';
+  static const String companyLogo2 = 'assets/test/company_logo2.png';
+  static const String companyLogo3 = 'assets/test/company_logo3.png';
 }

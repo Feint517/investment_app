@@ -4,6 +4,7 @@ import 'package:investment_app/core/constants/text_strings.dart';
 import 'package:investment_app/core/styles/loaders.dart';
 import 'package:investment_app/core/widgets/success_screen/success_screen.dart';
 import 'package:investment_app/features/investment/views/home.dart';
+import 'package:investment_app/navigation_menu.dart';
 
 class VerifyEmailController extends GetxController {
   static VerifyEmailController get instance => Get.find();
@@ -34,7 +35,7 @@ class VerifyEmailController extends GetxController {
           subtitle: StringsManager.yourAccountCreatedSubtitle,
           image: LottieAssets.success,
           // onPressed: () => AuthenticationRepository.instance.screenRedirect(),
-          onPressed: () => Get.offAll(() => const HomeScreen()),
+          onPressed: () => Get.offAll(() => const NavigationMenu()),
         ),
       );
     } catch (e) {
@@ -65,7 +66,7 @@ class VerifyEmailController extends GetxController {
           subtitle: StringsManager.yourAccountCreatedSubtitle,
           image: LottieAssets.success,
           // onPressed: () => AuthenticationRepository.instance.screenRedirect(),
-          onPressed: () => Get.offAll(() => const HomeScreen()),
+          onPressed: () => Get.offAll(() => const NavigationMenu()),
         ),
       );
     } catch (e) {
