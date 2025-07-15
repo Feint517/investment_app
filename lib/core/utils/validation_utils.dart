@@ -74,4 +74,21 @@ class ValidationUtils {
     }
     return null;
   }
+
+  static String? validateCardNumber(String? value) {
+    if (value == null || value.isEmpty) {
+      return 'Card number is required';
+    }
+
+    //? Remove dashes from the card number
+    String sanitizedValue = value.replaceAll('-', '');
+
+    //? Check if the sanitized card number is exactly 16 digits
+    if (sanitizedValue.length != 16 ||
+        !RegExp(r'^\d{16}$').hasMatch(sanitizedValue)) {
+      return 'Invalid card number format';
+    }
+
+    return null; //? Valid card number
+  }
 }

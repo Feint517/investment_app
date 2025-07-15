@@ -7,6 +7,7 @@ class CreditCardModel {
     required this.cardHolder,
     required this.expiryDate,
     required this.bankName,
+    this.cvv,
   });
 
   final CreditCardType type;
@@ -14,4 +15,5 @@ class CreditCardModel {
   final String cardHolder;
   final String expiryDate;
   final String bankName;
+  final String? cvv;
 }

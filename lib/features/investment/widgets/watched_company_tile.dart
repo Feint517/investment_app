@@ -23,23 +23,36 @@ class WatchedCompanyTile extends StatelessWidget {
         right: AppSizes.md,
       ),
       decoration: BoxDecoration(
-        color: AppColors.darkerGrey.withValues(alpha: 0.6),
+        color: DeviceUtils.isDarkMode(context)
+            ? AppColors.buttonSecondary
+            : AppColors.white,
         borderRadius: BorderRadius.circular(20.0),
+        border: Border.all(
+          color: DeviceUtils.isDarkMode(context)
+              ? AppColors.white.withValues(alpha: 0.2)
+              : AppColors.darkerGrey.withValues(alpha: 0.2),
+          width: 1.0,
+        ),
       ),
+
       child: Row(
         children: [
           CustomCircularAvatar(imageUrl: company.logo),
           const Gap(AppSizes.md),
-          Text(company.name),
+          Text(
+            company.name,
+            style: Theme.of(
+              context,
+            ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
+          ),
           const Spacer(),
           Column(
             children: [
               Text(
                 company.value,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                  color: AppColors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyMedium?.copyWith(fontWeight: FontWeight.bold),
               ),
               const Gap(AppSizes.xs),
               Row(

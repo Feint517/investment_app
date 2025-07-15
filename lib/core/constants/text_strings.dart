@@ -61,4 +61,11 @@ class StringsManager {
       "Your Account was created successfully!";
   static const String yourAccountCreatedSubtitle =
       "Congratulations, you can now start exploring the app";
+
+
+      //* add new card screen
+  static const String cardNumber = "Card Number";
+  static const String cardHolderName = "Card Holder Name";
+  static const String expiryDate = "Expiry Date";
+  static const String cvv = "CVV";
 }

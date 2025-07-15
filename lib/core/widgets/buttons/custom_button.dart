@@ -62,12 +62,6 @@ class CustomButton extends StatelessWidget {
               ? null
               : AppColors.buttonSecondary,
           borderRadius: BorderRadius.circular(30),
-          // border: isGradientBackground
-          //     ? null
-          //     : Border.all(
-          //         color: AppColors.white.withValues(alpha: 0.2),
-          //         width: 1.0,
-          //       ),
         ),
         child: Center(
           child: Row(

@@ -17,7 +17,7 @@ class NavigationMenu extends GetView<BottomNavController> {
           left: 0,
           right: 0,
           bottom: DeviceUtils.getBottomNavigationBarHeight() / 2,
-          child: CustomBottomNavBar(),
+          child: const CustomBottomNavBar(),
         ),
       ],
     );

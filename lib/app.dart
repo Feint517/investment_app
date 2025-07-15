@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:investment_app/core/bindings/general_bindings.dart';
 import 'package:investment_app/core/themes/theme.dart';
-import 'package:investment_app/navigation_menu.dart';
+import 'package:investment_app/features/personalization/views/add_new_card.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -22,7 +22,7 @@ class App extends StatelessWidget {
           theme: CustomAppTheme.lightTheme,
           darkTheme: CustomAppTheme.darkTheme,
           initialBinding: GeneralBindings(),
-          home: const NavigationMenu(),
+          home: const AddNewCardScreen(),
         );
       },
     );
