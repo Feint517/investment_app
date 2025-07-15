@@ -3,7 +3,6 @@ import 'package:investment_app/core/constants/assets_manager.dart';
 import 'package:investment_app/core/constants/text_strings.dart';
 import 'package:investment_app/core/styles/loaders.dart';
 import 'package:investment_app/core/widgets/success_screen/success_screen.dart';
-import 'package:investment_app/features/investment/views/home.dart';
 import 'package:investment_app/navigation_menu.dart';
 
 class VerifyEmailController extends GetxController {

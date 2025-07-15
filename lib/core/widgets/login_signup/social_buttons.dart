@@ -19,7 +19,7 @@ class SocialButtons extends StatelessWidget {
             assetPath: ImageAssets.googleLogo,
             width: 80,
           ),
-          onPressed: () {},
+          onTap: () {},
         ),
 
         const Gap(AppSizes.spaceBtwItems),
@@ -30,7 +30,7 @@ class SocialButtons extends StatelessWidget {
             assetPath: ImageAssets.facebookLogo,
             width: 80,
           ),
-          onPressed: () {},
+          onTap: () {},
         ),
       ],
     );

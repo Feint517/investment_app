@@ -26,8 +26,7 @@ class CustomBottomNavBar extends GetView<BottomNavController> {
               children: [
                 _buildNavItem(context, Iconsax.home, 0),
                 _buildNavItem(context, Iconsax.graph, 1),
-                //_buildNavItem(context, Iconsax.wallet, 2),
-                _buildNavItem(context, Iconsax.notification, 2),
+                _buildNavItem(context, Icons.person, 2),
               ],
             ),
           ),
@@ -41,8 +40,9 @@ class CustomBottomNavBar extends GetView<BottomNavController> {
     return GestureDetector(
       onTap: () => controller.changeTab(index),
       child: Expanded(
-        child: Container(
-          width: (DeviceUtils.getScreenWidth() * 0.75) / 4,
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 300),
+          width: (DeviceUtils.getScreenWidth() * 0.75) / 3,
           decoration: BoxDecoration(
             color: isSelected ? AppColors.primary : Colors.transparent,
             borderRadius: BorderRadius.circular(20.0),

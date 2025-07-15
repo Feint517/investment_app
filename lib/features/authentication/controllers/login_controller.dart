@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:investment_app/data/repositories/authentication_repository.dart';
-import 'package:investment_app/features/investment/views/home.dart';
 import 'package:investment_app/navigation_menu.dart';
-
 import '../../../core/constants/assets_manager.dart';
 import '../../../core/network/network_manager.dart';
 import '../../../core/styles/loaders.dart';

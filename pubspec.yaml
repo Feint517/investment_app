@@ -54,6 +54,7 @@ flutter:
     - assets/images/animations/
     - assets/images/on_boarding/
     - assets/svg/
+    - assets/svg/logos/
     - assets/svg/misc/
     - assets/svg/on_boarding/
     - assets/icons/

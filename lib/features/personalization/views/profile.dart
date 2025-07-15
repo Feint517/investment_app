@@ -24,7 +24,7 @@ class ProfileScreen extends StatelessWidget {
         actions: [
           CircularIconButton(
             icon: Icon(Iconsax.more, color: Colors.white, size: 24.0),
-            onPressed: () => Get.to(() => const SettingsScreen()),
+            onTap: () => Get.to(() => const SettingsScreen()),
           ),
         ],
       ),

@@ -10,6 +10,13 @@ class ImageAssets {
   static const String appLogo = "assets/images/logos/appLogo.png";
   static const String googleLogo = "assets/images/logos/google.png";
   static const String facebookLogo = "assets/images/logos/facebook.png";
+  static const String applePayLogo = "assets/images/logos/apple_pay_logo.png";
+  static const String paypalLogo = "assets/images/logos/paypal_logo.png";
+  static const String visaLogo = "assets/images/logos/visa_logo.png";
+  static const String mastercardLogo =
+      "assets/images/logos/mastercard_logo.png";
+  static const String creditCardIcon =
+      "assets/images/logos/credit_card_logo.png";
 
   //* check email
   static const String checkEmail = "assets/images/animations/email_check.png";
@@ -43,6 +50,14 @@ class LottieAssets {
 class IconAssets {}
 
 class SvgAssets {
+  //* logos
+  static const String paypalLogo = "assets/svg/logos/paypal_logo.svg";
+  static const String appleLogo = 'assets/svg/logos/apple_logo.svg';
+  static const String bankAccountLogo =
+      'assets/svg/logos/bank_account_logo.svg';
+  static const String visaLogo = 'assets/svg/logos/visa_logo.svg';
+  static const String mastercardLogo = 'assets/svg/logos/mastercard_logo.svg';
+
   static const String onBoarding1 = 'assets/svg/on_boarding/on_boarding1.svg';
   static const String onBoarding2 = 'assets/svg/on_boarding/on_boarding2.svg';
   static const String onBoarding3 = 'assets/svg/on_boarding/on_boarding3.svg';

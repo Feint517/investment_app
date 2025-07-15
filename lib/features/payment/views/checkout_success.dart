@@ -5,7 +5,6 @@ import 'package:investment_app/core/constants/sizes.dart';
 import 'package:investment_app/core/utils/device_utils.dart';
 import 'package:investment_app/core/widgets/appbar/appbar.dart';
 import 'package:investment_app/core/widgets/custom_shapes/container/curved_header_container.dart';
-import 'package:investment_app/core/widgets/misc/gradient_scaffold.dart';
 import 'package:lottie/lottie.dart';
 
 class CheckoutSuccessScreen extends StatelessWidget {

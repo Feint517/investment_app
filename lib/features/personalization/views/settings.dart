@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
-import 'package:iconsax/iconsax.dart';
 import 'package:investment_app/core/constants/sizes.dart';
 import 'package:investment_app/core/widgets/appbar/appbar.dart';
-import 'package:investment_app/core/widgets/buttons/circular_icon_button.dart';
 import 'package:investment_app/core/widgets/buttons/custom_button.dart';
 import 'package:investment_app/core/widgets/misc/gradient_scaffold.dart';
 import 'package:investment_app/features/personalization/widgets/accounts_settings_scetion.dart';

@@ -46,7 +46,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
                       color: backArrowColor ?? AppColors.white,
                       size: 24.0,
                     ),
-                    onPressed: () => Get.back(),
+                    onTap: () => Get.back(),
                   ),
                 ),
 

@@ -6,18 +6,18 @@ class CircularIconButton extends StatelessWidget {
   const CircularIconButton({
     super.key,
     required this.icon,
-    this.onPressed,
+    this.onTap,
     this.size = 40.0,
   });
 
   final Widget icon;
   final double size;
-  final VoidCallback? onPressed;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: onPressed,
+      onTap: onTap,
       child: ClipOval(
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),

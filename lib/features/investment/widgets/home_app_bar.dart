@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:investment_app/core/constants/assets_manager.dart';
 import 'package:investment_app/core/constants/sizes.dart';
 import 'package:investment_app/core/utils/device_utils.dart';
 import 'package:investment_app/core/widgets/buttons/circular_icon_button.dart';
-import 'package:investment_app/core/widgets/misc/circular_avatar.dart';
-import 'package:investment_app/features/personalization/views/profile.dart';
+import 'package:investment_app/features/notifications/views/notification.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -22,21 +20,25 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: SizedBox(
           height: AppSizes.appBarHeight,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              CustomCircularAvatar(
-                size: AvatarSize.small,
-                imageUrl: TestAssets.avatar,
-                onTap: () =>
-                    Get.to(() => const ProfileScreen(userId: 'Arselene')),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Hi, Arselene',
+                    style: Theme.of(context).textTheme.headlineSmall,
+                  ),
+                  Text(
+                    'Welcome back to .....',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                ],
               ),
-              // CircularIconButton(
-              //   icon: Icon(
-              //     Iconsax.notification,
-              //     color: Colors.white,
-              //     size: 24.0,
-              //   ),
-              // ),
+              CircularIconButton(
+                icon: Icon(Iconsax.notification, color: Colors.white),
+                onTap: () => Get.to(() => const NotificationScreen()),
+              ),
             ],
           ),
         ),
