@@ -10,22 +10,25 @@ class HomeController extends GetxController {
 
   final List<WatchedCompanyModel> watchedCompanies = [
     WatchedCompanyModel(
+      id: 1,
       logo: TestAssets.companyLogo1,
       name: 'Biso Na Biso',
       value: '\$275.84',
       percentageChange: -1.5,
     ),
     WatchedCompanyModel(
+      id: 2,
       logo: TestAssets.companyLogo2,
       name: 'Congo Foods',
       value: '\$150.00',
       percentageChange: 2.3,
     ),
     WatchedCompanyModel(
+      id: 3,
       logo: TestAssets.companyLogo3,
       name: 'Green Agriculture',
       value: '\$320.50',
       percentageChange: 0.0,
     ),
-  ];
+  ].obs;
 }

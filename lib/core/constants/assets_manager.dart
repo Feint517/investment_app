@@ -45,6 +45,7 @@ class LottieAssets {
   //* misc animations
   static const String check = "assets/lottie/misc/loading_dots.json";
   static const String success = "assets/lottie/misc/success2.json";
+  static const String verificationCode = "assets/lottie/misc/verification_code.json";
 }
 
 class IconAssets {}

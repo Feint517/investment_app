@@ -11,14 +11,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
     super.key,
     this.title,
-    this.showBackArrow = false,
+    this.showBackButton = false,
     this.backArrowColor,
     this.actions,
     this.leadingOnPressed,
   });
 
   final String? title;
-  final bool showBackArrow;
+  final bool showBackButton;
   final Color? backArrowColor;
   final List<Widget>? actions;
   final VoidCallback? leadingOnPressed;
@@ -37,7 +37,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             alignment: Alignment.center,
             children: [
               // Back Arrow or Leading Icon
-              if (showBackArrow)
+              if (showBackButton)
                 Align(
                   alignment: Alignment.centerLeft,
                   child: CircularIconButton(

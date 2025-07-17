@@ -2,32 +2,30 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:investment_app/core/constants/colors.dart';
-import 'package:investment_app/core/styles/shadows.dart';
+import 'package:investment_app/core/utils/device_utils.dart';
 import 'package:investment_app/core/utils/validation_utils.dart';
 
-enum TextFieldType { email, password, text }
+enum TextFieldType { email, password, phoneNumber, text }
 
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
     required this.controller,
     this.fillColor,
-    this.shadowColor = AppColors.primary,
     this.cursorColor = AppColors.primary,
     this.showBorder = true,
-    this.borderColor = AppColors.primary,
+    this.borderColor = AppColors.darkGrey,
     this.hintText,
     this.type = TextFieldType.text,
     this.prefixIcon,
     this.prefixIconColor,
     this.suffixIcon,
     this.suffixIconColor,
-    this.borderRadius = 16,
+    this.borderRadius = 40,
   });
 
   final TextEditingController controller;
   final Color? fillColor;
-  final Color shadowColor;
   final Color cursorColor;
   final bool showBorder;
   final Color borderColor;
@@ -51,21 +49,26 @@ class CustomTextField extends StatelessWidget {
         break;
       case TextFieldType.password:
         keyboardType = TextInputType.text;
-        defaultHint = 'Mot de passe';
+        defaultHint = 'Password';
         break;
       case TextFieldType.text:
         keyboardType = TextInputType.text;
-        defaultHint = 'Entrer texte';
+        defaultHint = 'Enter text';
+        break;
+      case TextFieldType.phoneNumber:
+        keyboardType = TextInputType.phone;
+        defaultHint = 'Enter phone number';
         break;
     }
-
     return Container(
+      width: DeviceUtils.getScreenWidth(),
+      height: 50,
       decoration: BoxDecoration(
-        color: fillColor ?? AppColors.white,
+        color: fillColor ?? AppColors.light,
         borderRadius: BorderRadius.circular(borderRadius),
-        boxShadow: CustomShadowStyle.customCircleShadows(
-          color: shadowColor,
-          isDarker: false,
+        border: Border.all(
+          color: borderColor.withValues(alpha: 0.5),
+          width: 1.0,
         ),
       ),
       child: TextFormField(
@@ -84,6 +87,8 @@ class CustomTextField extends StatelessWidget {
             'Text',
             value,
           ),
+          TextFieldType.phoneNumber =>
+            (value) => ValidationUtils.validatePhoneNumber(value),
         },
         decoration: InputDecoration(
           prefixIcon: switch (type) {
@@ -102,6 +107,10 @@ class CustomTextField extends StatelessWidget {
                       color: prefixIconColor ?? AppColors.darkGrey,
                     )
                   : null,
+            TextFieldType.phoneNumber => Icon(
+              Iconsax.call,
+              color: prefixIconColor ?? AppColors.darkGrey,
+            ),
           },
           suffixIcon: switch (type) {
             TextFieldType.email =>
@@ -128,11 +137,14 @@ class CustomTextField extends StatelessWidget {
                       color: suffixIconColor ?? AppColors.primary,
                     )
                   : null,
+            TextFieldType.phoneNumber => null,
           },
           hintText: hintText ?? defaultHint,
           hintStyle: TextStyle(color: AppColors.darkGrey),
           filled: true,
-          fillColor: fillColor ?? AppColors.white,
+          fillColor: DeviceUtils.isDarkMode(context)
+              ? AppColors.darkerGrey
+              : AppColors.white,
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(borderRadius),
             borderSide: showBorder

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:investment_app/core/constants/colors.dart';
+import 'package:investment_app/core/themes/custom_themes/text_field_theme.dart';
 import 'custom_themes/checkbox_theme.dart';
 import 'custom_themes/chip_theme.dart';
 import 'custom_themes/text_theme.dart';
@@ -11,6 +12,7 @@ class CustomAppTheme {
     brightness: Brightness.light,
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: Colors.white,
+    inputDecorationTheme: CustomTextFormFieldTheme.lightInputDecorationTheme,
     //appBarTheme: CustomAppBarTheme.lightAppBarTheme,
     //bottomSheetTheme: CustomBottomSheetTheme.lightBottomSheetTheme,
     checkboxTheme: CustomCheckboxTheme.lightCheckboxTheme,
@@ -27,6 +29,7 @@ class CustomAppTheme {
     brightness: Brightness.dark,
     primaryColor: AppColors.primary,
     scaffoldBackgroundColor: Colors.black,
+    inputDecorationTheme: CustomTextFormFieldTheme.darkInputDecorationTheme,
     //appBarTheme: CustomAppBarTheme.darkAppBarTheme,
     //bottomSheetTheme: CustomBottomSheetTheme.darkBottomSheetTheme,
     checkboxTheme: CustomCheckboxTheme.darkCheckboxTheme,

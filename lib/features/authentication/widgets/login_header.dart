@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:investment_app/core/widgets/images/responsive_svg_asset.dart';
 
 import '../../../core/constants/assets_manager.dart';
 import '../../../core/constants/sizes.dart';
@@ -13,17 +14,13 @@ class LoginHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Image(height: 150, image: AssetImage(ImageAssets.appLogo)),
-
-        Text(
-          StringsManager.loginTitle,
-          style: Theme.of(context).textTheme.headlineMedium,
-        ),
+        const ResponsiveImageAsset(assetPath: ImageAssets.appLogo, height: 60),
         const Gap(AppSizes.sm),
         Text(
-          StringsManager.loginSubtitle,
-          style: Theme.of(context).textTheme.bodyMedium,
+          StringsManager.loginTitle,
+          style: Theme.of(context).textTheme.headlineSmall,
         ),
+        
       ],
     );
   }

@@ -8,7 +8,7 @@ import 'package:investment_app/core/constants/text_strings.dart';
 import 'package:investment_app/core/utils/validation_utils.dart';
 import 'package:investment_app/core/widgets/buttons/custom_button.dart';
 import 'package:investment_app/features/authentication/controllers/signup_controller.dart';
-import 'package:investment_app/features/authentication/widgets/terms_and_conditions_checkbox.dart';
+import 'package:investment_app/features/authentication/views/enter_phone_number.dart';
 
 class SignupForm extends GetView<SignupController> {
   const SignupForm({super.key});
@@ -16,7 +16,7 @@ class SignupForm extends GetView<SignupController> {
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: controller.signupFormKey,
+      key: controller.basicInfoFormKey,
       child: Column(
         children: [
           Row(
@@ -74,17 +74,6 @@ class SignupForm extends GetView<SignupController> {
           ),
           const Gap(AppSizes.spaceBtwInputFields),
 
-          //* phone number
-          TextFormField(
-            controller: controller.phoneNumber,
-            validator: (value) => ValidationUtils.validatePhoneNumber(value),
-            decoration: const InputDecoration(
-              labelText: StringsManager.phoneNumber,
-              prefixIcon: Icon(Iconsax.call, color: AppColors.primary),
-            ),
-          ),
-          const Gap(AppSizes.spaceBtwInputFields),
-
           //* password
           Obx(
             //? wrap it with observer to redraw the widget on change
@@ -113,14 +102,14 @@ class SignupForm extends GetView<SignupController> {
           const Gap(AppSizes.spaceBtwSections),
 
           //* terms&conditions checkbox
-          const TermsAndConditionsCheckBox(),
-          const Gap(AppSizes.spaceBtwSections),
+          // const TermsAndConditionsCheckBox(),
+          // const Gap(AppSizes.spaceBtwSections),
 
           //* sign up button
           CustomButton(
             isGradientBackground: true,
-            label: StringsManager.createAccount,
-            onPressed: () => controller.signup(),
+            label: StringsManager.sayContinue,
+            onPressed: () => Get.to(() => const EnterPhoneNumberScreen()),
           ),
         ],
       ),

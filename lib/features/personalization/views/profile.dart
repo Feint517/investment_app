@@ -1,62 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:investment_app/core/constants/assets_manager.dart';
-import 'package:investment_app/core/constants/colors.dart';
 import 'package:investment_app/core/constants/sizes.dart';
 import 'package:investment_app/core/widgets/appbar/appbar.dart';
 import 'package:investment_app/core/widgets/buttons/circular_icon_button.dart';
-import 'package:investment_app/core/widgets/misc/circular_avatar.dart';
 import 'package:investment_app/core/widgets/misc/gradient_scaffold.dart';
-import 'package:investment_app/features/personalization/views/settings.dart';
+import 'package:investment_app/features/personalization/widgets/account_basic_info.dart';
+import 'package:investment_app/features/personalization/widgets/account_settings_section.dart';
+import 'package:investment_app/features/personalization/widgets/app_settings_section.dart';
+import 'package:investment_app/features/personalization/widgets/settings_header.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key, required this.userId});
-
-  final String userId;
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GradientScaffold(
       appBar: CustomAppBar(
-        showBackArrow: true,
-        actions: [
-          CircularIconButton(
-            icon: Icon(Iconsax.more, color: Colors.white, size: 24.0),
-            onTap: () => Get.to(() => const SettingsScreen()),
-          ),
-        ],
+        actions: [CircularIconButton(icon: Icon(Iconsax.logout), onTap: () {})],
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: AppSizes.defaultSpace),
+      body: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: AppSizes.md),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const CustomCircularAvatar(
-              imageUrl: TestAssets.avatar,
-              size: AvatarSize.large,
-            ),
-            const Gap(AppSizes.spaceBtwItems),
-            //* User Name
-            Text(
-              userId,
-              style: Theme.of(
-                context,
-              ).textTheme.headlineSmall?.copyWith(color: AppColors.white),
-              textAlign: TextAlign.center,
-            ),
+            const ProfileHeader(),
             const Gap(AppSizes.spaceBtwSections),
-            Row(children: []),
-            const Gap(AppSizes.spaceBtwSections * 5),
-            const Text(
-              'This Profile is under construction',
-              style: TextStyle(color: AppColors.white, fontSize: 16.0),
-            ),
+            const AccountBasicInfo(),
+            const Gap(AppSizes.spaceBtwSections),
+
+            const AccountSettingsSection(),
+            const Gap(AppSizes.spaceBtwSections),
+            
+            const AppSettingsSection(),
+            const Gap(150),
           ],
         ),
       ),
     );
   }
 }
+

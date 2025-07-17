@@ -9,18 +9,27 @@ class SignupController extends GetxController {
   static SignupController get instance => Get.find();
 
   //* variables
-  final privacyPolicy = true.obs;
+  // final privacyPolicy = true.obs;
   final hidePassword = true.obs;
-  final firstName = TextEditingController(text: 'arselene');
-  final lastName = TextEditingController(text: 'doe');
+  //* Step 1: Basic Info
+  final firstName = TextEditingController(text: 'Arselene');
+  final lastName = TextEditingController(text: 'Doe');
   final userName = TextEditingController(text: 'arselene_doe');
   final email = TextEditingController(text: 'arselene@example.com');
+  final password = TextEditingController(text: 'password@G123');
+
+  //* Step 2: Phone Number
   final phoneNumber = TextEditingController(text: '1234567890');
-  final password = TextEditingController(text: '12345678tWX@');
-  GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
+
+  //* Step 3: Verification Code
+  final verificationCode = TextEditingController();
+
+
+  GlobalKey<FormState> basicInfoFormKey = GlobalKey<FormState>();
+  GlobalKey<FormState> phoneNumberFormKey = GlobalKey<FormState>();
+  GlobalKey<FormState> verificationCodeFormKey = GlobalKey<FormState>();
 
   //* signup
-
   void signup() async {
     try {
       //* start loading
@@ -37,22 +46,22 @@ class SignupController extends GetxController {
       // }
 
       //* form validation
-      if (!signupFormKey.currentState!.validate()) {
+      if (!basicInfoFormKey.currentState!.validate()) {
         CustomFullscreenLoader.stopLoading();
         return;
       }
 
-      //* privacy policy check
-      if (!privacyPolicy.value) {
-        CustomLoaders.showSnackBar(
-          type: SnackBarType.warning,
-          title: 'Accept privacy policy',
-          message:
-              'In order to create your account you have to accept our privacy policy',
-        );
-        CustomFullscreenLoader.stopLoading();
-        return;
-      }
+      // //* privacy policy check
+      // if (!privacyPolicy.value) {
+      //   CustomLoaders.showSnackBar(
+      //     type: SnackBarType.warning,
+      //     title: 'Accept privacy policy',
+      //     message:
+      //         'In order to create your account you have to accept our privacy policy',
+      //   );
+      //   CustomFullscreenLoader.stopLoading();
+      //   return;
+      // }
 
       //* register user in the firebase authentication and save user data in firebase
       // final userCredential = await AuthenticationRepository.instance

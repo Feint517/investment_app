@@ -18,7 +18,7 @@ class AddNewCardScreen extends GetView<AddNewCardController> {
   Widget build(BuildContext context) {
     Get.put(AddNewCardController());
     return GradientScaffold(
-      appBar: CustomAppBar(title: 'Add New Card', showBackArrow: true),
+      appBar: CustomAppBar(title: 'Add New Card', showBackButton: true),
       body: SafeArea(
         top: false,
         right: false,

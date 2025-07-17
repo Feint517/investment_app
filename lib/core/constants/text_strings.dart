@@ -22,7 +22,7 @@ class StringsManager {
   static const String forgetPassword = "Forget Passwrod?";
   static const String signIn = "Sign In";
   static const String createAccount = "Create Account";
-  static const String orSignInWith = "Or Sign In With";
+  static const String orSignInWith = "Or Continue With";
   static const String orSignUpWith = "Or Sign Up With";
   static const String verificationCode = "Verification Code";
   static const String iAgreeTo = "I agree to";
@@ -31,8 +31,7 @@ class StringsManager {
   static const String terms = "Terms of use";
 
   //* authentication heading text
-  static const String loginTitle = "Welcome!";
-  static const String loginSubtitle = "jump back to your account";
+  static const String loginTitle = "Let's get you back to your account!";
   static const String signUpTitile = "Let's create your account";
 
   //* sign up screen
@@ -62,8 +61,7 @@ class StringsManager {
   static const String yourAccountCreatedSubtitle =
       "Congratulations, you can now start exploring the app";
 
-
-      //* add new card screen
+  //* add new card screen
   static const String cardNumber = "Card Number";
   static const String cardHolderName = "Card Holder Name";
   static const String expiryDate = "Expiry Date";

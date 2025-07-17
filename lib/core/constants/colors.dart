@@ -9,6 +9,7 @@ class AppColors {
   static const Color backgroundLight = Color(0xFFF9ECFF);
   static const Color backgroundDark = Color(0xFF06090F);
 
+
   static const Color success = Color(0xFF4CAF50);
   static const Color warning = Color(0xFFFF3B3B);
   static const Color disabled = Color(0xFFC4C4C4);
@@ -23,7 +24,7 @@ class AppColors {
 
   //* background colors
   static const Color light = Color(0xFFF9ECFF);
-  static const Color dark = Color(0xFF272727);
+  static const Color dark = Color(0xFF08070C);
 
   //* neutral shades
   static const Color black = Color(0xFF000000);

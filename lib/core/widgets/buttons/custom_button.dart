@@ -38,11 +38,7 @@ class CustomButton extends StatelessWidget {
       behavior: HitTestBehavior.opaque,
       child: Container(
         width: width ?? DeviceUtils.getScreenWidth(),
-        height: switch (size) {
-          ButtonSize.small => 40,
-          ButtonSize.medium => 48,
-          ButtonSize.large => 56,
-        },
+        height: 48,
         decoration: BoxDecoration(
           gradient: (isGradientBackground && !isDisabled)
               ? LinearGradient(

@@ -10,7 +10,6 @@ import '../../../core/constants/text_strings.dart';
 import '../../../core/utils/validation_utils.dart';
 import '../../../core/widgets/buttons/custom_button.dart';
 import '../views/forget_password.dart';
-import '../views/signup.dart';
 
 class LoginForm extends GetView<LoginController> {
   const LoginForm({super.key});
@@ -29,12 +28,13 @@ class LoginForm extends GetView<LoginController> {
             TextFormField(
               controller: controller.email,
               validator: (value) => ValidationUtils.validateEmail(value),
-              decoration: const InputDecoration(
-                prefixIcon: Icon(
+              decoration: InputDecoration(
+                prefixIcon: const Icon(
                   Iconsax.direct_right,
                   color: AppColors.primary,
                 ),
                 labelText: StringsManager.email,
+                labelStyle: TextStyle(color: AppColors.primary),
               ),
             ),
             const Gap(AppSizes.spaceBtwInputFields),
@@ -49,6 +49,7 @@ class LoginForm extends GetView<LoginController> {
                 obscureText: controller.hidePassword.value,
                 decoration: InputDecoration(
                   labelText: StringsManager.password,
+                  labelStyle: TextStyle(color: AppColors.primary),
                   prefixIcon: const Icon(
                     Iconsax.password_check,
                     color: AppColors.primary,
@@ -88,31 +89,33 @@ class LoginForm extends GetView<LoginController> {
                 //* forget password
                 TextButton(
                   onPressed: () => Get.to(() => const ForgetPasswordScreen()),
-                  child: const Text(StringsManager.forgetPassword),
+                  child: Text(
+                    StringsManager.forgetPassword,
+                    style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                      color: AppColors.primary,
+                      fontSize: 12,
+                    ),
+                  ),
                 ),
               ],
             ),
             const Gap(AppSizes.spaceBtwSections),
 
             //* sign in button
-            SizedBox(
-              width: double.infinity, //? to make the sized button full width
-              child: CustomButton(
-                isGradientBackground: true,
-                label: StringsManager.signIn,
-                onPressed: () => controller.emailAndPasswordSignIn(),
-              ),
+            CustomButton(
+              isGradientBackground: true,
+              label: StringsManager.signIn,
+              onPressed: () => controller.emailAndPasswordSignIn(),
             ),
-            const Gap(AppSizes.spaceBtwItems),
 
             //* create account button
-            SizedBox(
-              width: double.infinity, //? to make the sized button full width
-              child: CustomButton(
-                label: StringsManager.createAccount,
-                onPressed: () => Get.to(() => const SignupScreen()),
-              ),
-            ),
+            // SizedBox(
+            //   width: double.infinity, //? to make the sized button full width
+            //   child: CustomButton(
+            //     label: StringsManager.createAccount,
+            //     onPressed: () => Get.to(() => const SignupScreen()),
+            //   ),
+            // ),
           ],
         ),
       ),

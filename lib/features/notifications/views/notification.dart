@@ -8,7 +8,7 @@ class NotificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GradientScaffold(
-      appBar: CustomAppBar(showBackArrow: true, title: 'Notifications'),
+      appBar: CustomAppBar(showBackButton: true, title: 'Notifications'),
     );
   }
 }

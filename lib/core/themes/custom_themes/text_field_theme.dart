@@ -7,23 +7,34 @@ class CustomTextFormFieldTheme {
     prefixIconColor: AppColors.primary,
     suffixIconColor: AppColors.primary,
     //*constraints
-    labelStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.black),
-    hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.black),
+    labelStyle: const TextStyle(fontSize: 14, color: AppColors.primary),
+    hintStyle: const TextStyle().copyWith(
+      fontSize: 14,
+      color: AppColors.primary,
+    ),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle: const TextStyle().copyWith(
       color: Colors.black.withValues(alpha: 0.8),
     ),
-    border: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(40),
-      borderSide: const BorderSide(width: 1, color: AppColors.primary),
+    filled: true,
+    fillColor: AppColors.light,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30.0),
+      borderSide: BorderSide(
+        color: AppColors.darkGrey.withValues(alpha: 0.5),
+        width: 1.5, // Border width
+      ),
     ),
-    enabledBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(40),
-      borderSide: const BorderSide(width: 1, color: AppColors.primary),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30.0),
+      borderSide: BorderSide(
+        color: AppColors.darkGrey.withValues(alpha: 0.5),
+        width: 1.5,
+      ),
     ),
-    focusedBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(40),
-      borderSide: const BorderSide(width: 1, color: AppColors.primary),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30.0),
+      borderSide: const BorderSide(color: AppColors.primary, width: 2.0),
     ),
     errorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(40),
@@ -38,25 +49,36 @@ class CustomTextFormFieldTheme {
   static InputDecorationTheme darkInputDecorationTheme = InputDecorationTheme(
     errorMaxLines: 3,
     prefixIconColor: AppColors.primary,
-    suffixIconColor: AppColors.primary,
+    suffixIconColor: AppColors.white,
     //*constraints
-    labelStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),
-    hintStyle: const TextStyle().copyWith(fontSize: 14, color: Colors.white),
+    labelStyle: const TextStyle(fontSize: 14, color: AppColors.primary),
+    hintStyle: const TextStyle().copyWith(
+      fontSize: 14,
+      color: AppColors.primary,
+    ),
     errorStyle: const TextStyle().copyWith(fontStyle: FontStyle.normal),
     floatingLabelStyle: const TextStyle().copyWith(
       color: Colors.white.withValues(alpha: 0.8),
     ),
-    border: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(40),
-      borderSide: const BorderSide(width: 1, color: AppColors.primary),
+    filled: true,
+    fillColor: AppColors.darkerGrey,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30.0),
+      borderSide: BorderSide(
+        color: AppColors.darkGrey.withValues(alpha: 0.5),
+        width: 1.5, // Border width
+      ),
     ),
-    enabledBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(40),
-      borderSide: const BorderSide(width: 1, color: AppColors.primary),
+    enabledBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30.0),
+      borderSide: BorderSide(
+        color: AppColors.darkGrey.withValues(alpha: 0.5),
+        width: 1.5,
+      ),
     ),
-    focusedBorder: const OutlineInputBorder().copyWith(
-      borderRadius: BorderRadius.circular(40),
-      borderSide: const BorderSide(width: 1, color: AppColors.primary),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(30.0),
+      borderSide: const BorderSide(color: AppColors.primary, width: 2.0),
     ),
     errorBorder: const OutlineInputBorder().copyWith(
       borderRadius: BorderRadius.circular(40),

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get.dart';
-
+import 'package:investment_app/core/constants/colors.dart';
+import 'package:investment_app/features/authentication/views/login.dart';
 import '../../../core/constants/sizes.dart';
 import '../../../core/constants/text_strings.dart';
 import '../../../core/widgets/appbar/appbar.dart';
@@ -18,12 +19,14 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Get.put(SignupController());
     return GradientScaffold(
-      appBar: CustomAppBar(showBackArrow: true),
+      appBar: CustomAppBar(),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(AppSizes.defaultSpace),
+          padding: const EdgeInsets.symmetric(
+            horizontal: AppSizes.defaultSpace,
+          ),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               //* title
               Text(
@@ -38,10 +41,32 @@ class SignupScreen extends StatelessWidget {
 
               //* divider
               FormDivider(dividerText: StringsManager.orSignUpWith.capitalize!),
-              const Gap(AppSizes.spaceBtwSections),
+              const Gap(AppSizes.spaceBtwItems),
 
               //* social buttons
               const SocialButtons(),
+              const Gap(AppSizes.spaceBtwSections),
+
+              //* already have an account
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Already have an account? ',
+                    style: Theme.of(context).textTheme.bodyMedium,
+                  ),
+                  TextButton(
+                    onPressed: () => Get.off(() => const LoginScreen()),
+                    child: Text(
+                      'Login',
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                        color: AppColors.primary,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),

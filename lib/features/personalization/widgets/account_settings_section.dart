@@ -3,39 +3,41 @@ import 'package:gap/gap.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:investment_app/core/constants/sizes.dart';
 import 'package:investment_app/features/personalization/models/setting_tile_model.dart';
+import 'package:investment_app/features/personalization/views/manage_cards.dart';
 import 'package:investment_app/features/personalization/widgets/setting_tile.dart';
 
-class AppSettingsSection extends StatelessWidget {
-  const AppSettingsSection({super.key});
+class AccountSettingsSection extends StatelessWidget {
+  const AccountSettingsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
     List<SettingTileModel> settingTiles = [
       SettingTileModel(
-        icon: Iconsax.notification,
-        title: 'Notifications',
-        subtitle: 'Manage your notifications',
+        icon: Iconsax.user,
+        title: 'Account',
+        subtitle: 'Profile and account settings',
       ),
       SettingTileModel(
-        icon: Iconsax.language_circle,
-        title: 'Language',
-        subtitle: 'Change your app language',
+        icon: Iconsax.lock,
+        title: 'Security',
+        subtitle: 'Update your security settings',
       ),
       SettingTileModel(
-        icon: Icons.palette,
-        title: 'Themes',
-        subtitle: 'Customize your app theme',
+        icon: Iconsax.devices,
+        title: 'Devices',
+        subtitle: 'Manage your devices',
       ),
       SettingTileModel(
-        icon: Iconsax.info_circle,
-        title: 'About',
-        subtitle: 'Learn more about the app',
+        icon: Iconsax.card_edit,
+        title: 'Payment Methods',
+        subtitle: 'Manage your payment methods',
+        destination: () => const ManageCardsScreen(),
       ),
     ];
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Application', style: Theme.of(context).textTheme.headlineSmall),
+        Text('Account', style: Theme.of(context).textTheme.headlineSmall),
         const Gap(AppSizes.spaceBtwItems),
         ...List.generate(settingTiles.length, (index) {
           final tile = settingTiles[index];

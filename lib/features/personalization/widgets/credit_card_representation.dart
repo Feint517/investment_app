@@ -21,7 +21,14 @@ class CreditCardRepresentation extends GetView<AddNewCardController> {
         width: DeviceUtils.getScreenWidth(),
         height: 220,
         decoration: BoxDecoration(
-          color: controller.selectedColor.value,
+          gradient: LinearGradient(
+            colors: [
+              controller.selectedGradient.value.colors.first,
+              controller.selectedGradient.value.colors.last.withValues(alpha: 0.7),
+            ],
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
           borderRadius: BorderRadius.circular(20.0),
         ),
         child: Column(

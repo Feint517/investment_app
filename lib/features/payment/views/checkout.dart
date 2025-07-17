@@ -17,7 +17,7 @@ class CheckoutScreen extends GetView<PaymentController> {
   Widget build(BuildContext context) {
     Get.put(PaymentController());
     return GradientScaffold(
-      appBar: CustomAppBar(title: 'Checkout', showBackArrow: true),
+      appBar: CustomAppBar(title: 'Checkout', showBackButton: true),
       body: SafeArea(
         right: false,
         left: false,
