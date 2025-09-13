@@ -38,8 +38,11 @@ class EditWatchlist extends GetView<HomeController> {
                   },
                   background: Container(
                     alignment: Alignment.centerRight,
-                    color: Colors.red,
                     padding: const EdgeInsets.symmetric(horizontal: 20),
+                    decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
                     child: const Icon(Icons.delete, color: Colors.white),
                   ),
                   child: WatchedCompanyTile(company: company),

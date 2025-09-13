@@ -39,7 +39,7 @@ class VerifyCodeScreen extends GetView<SignupController> {
 
     final submittedPinTheme = defaultPinTheme.copyWith(
       decoration: defaultPinTheme.decoration?.copyWith(
-        color: AppColors.grey.withValues(alpha: 0.7),
+        color: AppColors.buttonSecondary.withValues(alpha: 0.7),
       ),
     );
     return GradientScaffold(
@@ -59,9 +59,11 @@ class VerifyCodeScreen extends GetView<SignupController> {
               const Gap(AppSizes.sm),
               Text(
                 'We have sent a verification code to your phone number.',
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyMedium?.copyWith(color: AppColors.grey),
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: DeviceUtils.isDarkMode(context)
+                      ? AppColors.white
+                      : AppColors.black,
+                ),
                 textAlign: TextAlign.center,
               ),
               const Gap(AppSizes.spaceBtwItems),

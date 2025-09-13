@@ -61,7 +61,7 @@ class CustomTextFormFieldTheme {
       color: Colors.white.withValues(alpha: 0.8),
     ),
     filled: true,
-    fillColor: AppColors.darkerGrey,
+    fillColor: AppColors.buttonSecondary,
     border: OutlineInputBorder(
       borderRadius: BorderRadius.circular(30.0),
       borderSide: BorderSide(
